@@ -1,9 +1,15 @@
-import './App.css';
+import "./App.css";
+import Video from "./Video";
 
 function App() {
   return (
     <div className="app">
       <h1>Lets build a full stack mern tik tok clone</h1>
+
+      <div className="app__videos">
+        <Video />
+        <Video />
+      </div>
 
       {/* app container */}
       {/* videos */}
@@ -12,7 +18,6 @@ function App() {
       {/* <Video /> */}
       {/* <Video /> */}
       {/* <Video /> */}
-
     </div>
   );
 }
