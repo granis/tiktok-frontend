@@ -21,6 +21,11 @@ function VideoFooter() {
           </Ticker>
         </div>
       </div>
+      <img
+        className="videoFooter__record"
+        src="https://static.thenounproject.com/png/934821-200.png"
+        alt=""
+      />
     </div>
   );
 }
