@@ -3,7 +3,7 @@ import "./Video.css";
 import VideoFooter from "./VideoFooter";
 import VideoSidebar from "./VideoSidebar";
 
-function Video() {
+function Video({ url, channel, description, song, likes, messages, shares }) {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
 
@@ -27,11 +27,11 @@ function Video() {
         loop
         controls
         ref={videoRef}
-        src="http://media.w3.org/2010/05/sintel/trailer.ogv"
+        src="{url}"
       ></video>
 
-      <VideoFooter />
-      <VideoSidebar likes={111} shares={222} messages={333} />
+      <VideoFooter channel={channel} description={description} song={song} />
+      <VideoSidebar likes={likes} shares={shares} messages={messages} />
     </div>
   );
 }
