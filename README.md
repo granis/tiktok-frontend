@@ -1,6 +1,6 @@
 # Tiktok clone from MERN-tutorial
 
-This project is the first one mentioned in [Learning the MERN-stack](https://www.youtube.com/watch?v=ktjafK4SgWM).
+This project is the second one mentioned in [Learning the MERN-stack](https://www.youtube.com/watch?v=ktjafK4SgWM).
 
 The backend is available at [tinder-backend](https://github.com/granis/tinder-backend).
 
