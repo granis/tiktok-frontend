@@ -1,37 +1,42 @@
+import axios from "./axios";
 import "./App.css";
 import Video from "./Video";
+import React, { useEffect, useState } from "react";
 
 function App() {
+  require("dotenv").config();
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    async function fetchPosts() {
+      const response = await axios.get("/v2/posts");
+      setVideos(response.data);
+      return response;
+    }
+
+    fetchPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  console.log(videos);
+
   return (
     <div className="app">
       <div className="app__videos">
-        <Video
-          url="http://media.w3.org/2010/05/sintel/trailer.ogv"
-          channel="merndude"
-          description="mern stack video"
-          song="nena - 99 red balloons"
-          likes={123}
-          messages={333}
-          shares={555}
-        />
-        <Video
-          url="http://media.w3.org/2010/05/sintel/trailer.ogv"
-          channel="other"
-          description="completely different mern stack video"
-          song="crazy frog - gangnam style redux"
-          likes={1}
-          messages={5}
-          shares={7}
-        />
+        {videos.map(
+          ({ url, channel, description, song, likes, messages, shares }) => (
+            <Video
+              url={url}
+              channel={channel}
+              song={song}
+              likes={likes}
+              messages={messages}
+              description={description}
+              shares={shares}
+            />
+          )
+        )}
       </div>
-
-      {/* app container */}
-      {/* videos */}
-      {/* <Video /> */}
-      {/* <Video /> */}
-      {/* <Video /> */}
-      {/* <Video /> */}
-      {/* <Video /> */}
     </div>
   );
 }

@@ -27,7 +27,7 @@ function Video({ url, channel, description, song, likes, messages, shares }) {
         loop
         controls
         ref={videoRef}
-        src="{url}"
+        src={url}
       ></video>
 
       <VideoFooter channel={channel} description={description} song={song} />
